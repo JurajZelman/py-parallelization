@@ -1,3 +1,5 @@
+"""Copyright (c) 2022 Juraj Zelman"""
+
 import time
 from multiprocessing import Pool, cpu_count
 
