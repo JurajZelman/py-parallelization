@@ -1,2 +1,2 @@
 # py-parallelization
-Template for parallelizing tasks in python. Uses the multiprocessing package.
+Template for parallelizing tasks in python. Uses the multiprocessing module.
