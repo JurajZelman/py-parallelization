@@ -64,6 +64,10 @@ def run_tasks_sequentially(parameters: list[int]) -> None:
 
 
 def main() -> None:
+    """
+    Run the main function. Firstly, tasks are computed in parallel. Then, tasks
+    are computed sequentially for time comparison.
+    """
     print(f"You have {cpu_count()} CPUs.", "\n")
 
     parameters = [1, 2, 3, 4]
