@@ -4,23 +4,18 @@ import time
 from multiprocessing import Pool, cpu_count
 
 
-def run_subtask(index: int) -> tuple[int, float]:
+def main() -> None:
     """
-    Function representing the subtask that should be parallelized. This
-    template version freezes the program for one second.
-
-    Args:
-        index: Index representing the number of the subtask.
-
-    Returns:
-        The index of the subtask and the total time of subtask execution.
+    Compares both parallel and sequential approaches. Firstly, tasks are
+    computed in parallel. Then, tasks are computed sequentially for time
+    comparison.
     """
-    start_t = time.perf_counter()
-    time.sleep(1)
-    end_t = time.perf_counter()
-    total_t = round(end_t - start_t, 3)
+    print(f"You have {cpu_count()} CPUs.", "\n")
 
-    return index, total_t
+    parameters = [1, 2, 3, 4]
+
+    run_tasks_in_parallel(parameters)
+    run_tasks_sequentially(parameters)
 
 
 def run_tasks_in_parallel(parameters: list[int]) -> None:
@@ -63,17 +58,23 @@ def run_tasks_sequentially(parameters: list[int]) -> None:
     print("Output: ", output, "\n")
 
 
-def main() -> None:
+def run_subtask(index: int) -> tuple[int, float]:
     """
-    Run the main function. Firstly, tasks are computed in parallel. Then, tasks
-    are computed sequentially for time comparison.
+    Function representing the subtask that should be parallelized. This
+    template version freezes the program for one second.
+
+    Args:
+        index: Index representing the number of the subtask.
+
+    Returns:
+        The index of the subtask and the total time of subtask execution.
     """
-    print(f"You have {cpu_count()} CPUs.", "\n")
+    start_t = time.perf_counter()
+    time.sleep(1)
+    end_t = time.perf_counter()
+    total_t = round(end_t - start_t, 3)
 
-    parameters = [1, 2, 3, 4]
-
-    run_tasks_in_parallel(parameters)
-    run_tasks_sequentially(parameters)
+    return index, total_t
 
 
 if __name__ == "__main__":
