@@ -6,9 +6,8 @@ from multiprocessing import Pool, cpu_count
 
 def main() -> None:
     """
-    Compares both parallel and sequential approaches. Firstly, tasks are
-    computed in parallel. Then, tasks are computed sequentially for time
-    comparison.
+    Compares parallel and sequential approaches. Firstly, tasks are computed
+    in parallel. Then, tasks are computed sequentially for time comparison.
     """
     print(f"You have {cpu_count()} CPUs.", "\n")
 
