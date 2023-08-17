@@ -1,4 +1,4 @@
-"""Copyright (c) 2022 Juraj Zelman"""
+"""Template for parallelizing tasks in Python."""
 
 import time
 from multiprocessing import Pool, cpu_count
