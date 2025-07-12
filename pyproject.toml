@@ -1,0 +1,56 @@
+[project]
+name = "py-parallelization"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "Juraj Zelman"},
+]
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.5",
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 80
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors (code style violations)
+    "W",   # pycodestyle warnings (potential style issues)
+    "F",   # pyflakes (undefined names, unused imports)
+    "I",   # isort (import sorting and organization)
+    "B",   # flake8-bugbear (common Python programming mistakes)
+    "C4",  # flake8-comprehensions (list/dict/set comprehension improvements)
+    "N",   # PEP8 naming conventions (variable and function naming)
+    "D",   # pydocstyle (docstring style and presence)
+    "D213", # multi-line docstring summary should start at the first line
+]
+ignore = [
+    "C901",  # cyclomatic complexity too high (overly complex functions)
+    "W191",  # indentation contains tabs (use spaces instead)
+    "D401",  # imperative mood in docstrings (first line should be imperative)
+    "D212",  # multi-line docstring summary should start at the first line
+    "D205",  # missing blank line after summary line in docstrings
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.hatch.build.targets.wheel]
+include = ["*"]

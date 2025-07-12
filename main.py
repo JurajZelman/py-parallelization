@@ -9,7 +9,7 @@ def main() -> None:
     Compares parallel and sequential approaches. Firstly, tasks are computed
     in parallel. Then, tasks are computed sequentially for time comparison.
     """
-    print(f"You have {cpu_count()} CPUs.", "\n")
+    print(f"You have {cpu_count()} logical CPUs (cores/threads).", "\n")
 
     arguments = [1, 2, 3, 4]
 
@@ -54,7 +54,6 @@ def run_tasks_sequentially(arguments: list[int]) -> None:
     Args:
         arguments: List of subtask indices.
     """
-
     start_t = time.perf_counter()
 
     output = []
